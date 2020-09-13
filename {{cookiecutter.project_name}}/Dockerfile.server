@@ -1,0 +1,6 @@
+FROM edgar/gogrpc
+
+COPY . /go/src/gitlab.com/subtubes/sample
+WORKDIR /go/src/gitlab.com/subtubes/sample
+RUN ./cmd.sh gen
+ENTRYPOINT [ "go", "run", "{{cookiecutter.module_name}}/{{cookiecutter.module_name}}-server/server.go"  ]
