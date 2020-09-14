@@ -1,6 +1,6 @@
-FROM edgar/gogrpc
+FROM {{cookiecutter.dockerhub_user}}/gogrpc
 
-COPY . /go/src/gitlab.com/subtubes/sample
-WORKDIR /go/src/gitlab.com/subtubes/sample
+COPY . /go/src/{{cookiecutter.repository}}/{{cookiecutter.repository_user}}
+WORKDIR /go/src/{{cookiecutter.repository}}/{{cookiecutter.repository_user}}/{{cookiecutter.module_name}}
 RUN ./cmd.sh gen
-ENTRYPOINT [ "go", "run", "{{cookiecutter.module_name}}/{{cookiecutter.module_name}}-server/server.go"  ]
+ENTRYPOINT [ "go", "run", "{{cookiecutter.module_name}}/{{cookiecutter.module_name}}.go"]
