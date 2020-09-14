@@ -2,5 +2,5 @@ FROM {{cookiecutter.dockerhub_user}}/grpc:v0.0.1
 
 COPY . /go/src/{{cookiecutter.repository}}/{{cookiecutter.repository_user}}
 WORKDIR /go/src/{{cookiecutter.repository}}/{{cookiecutter.repository_user}}/{{cookiecutter.module_name}}
-RUN ./cmd.sh gen
+RUN go get
 ENTRYPOINT [ "go", "run", "{{cookiecutter.module_name}}/{{cookiecutter.module_name}}.go"]
