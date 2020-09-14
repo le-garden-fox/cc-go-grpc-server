@@ -2,6 +2,7 @@
 {
     "project_name": "",
     "module_name": "",
+    "server_port": 50051,
     "repository_user": "le-garden-fox", 
     "repository": "github.com"
 }
